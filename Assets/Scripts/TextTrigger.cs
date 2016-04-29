@@ -3,21 +3,24 @@ using System.Collections;
 
 public class TextTrigger : MonoBehaviour 
 {
-	void OnStart()
-	{
-		gameObject.GetComponent<MeshRenderer>().enabled = false;
-	}
+	[SerializeField]
+	GameObject hello;
 
-	void OntriggerEnter(Collider other)
+	void OnTriggerEnter(Collider other)
 	{
-		if(other.gameObject.tag == "Player")
+		if(other.tag == "Player")
 		{
-			gameObject.GetComponent<MeshRenderer>().enabled = true;
-		}
+			hello.SetActive(true);
+			//gameObject.GetComponent<MeshRenderer>().enabled = true;
+		}  
 	}
 
-	void OnTriggerExit(Collider other)
+	void OnTriggerExit (Collider other)
 	{
-		gameObject.GetComponent<MeshRenderer>().enabled = false;
+		if(other.tag == "Player")
+		{
+			hello.SetActive(false);
+			Debug.Log ("Poof");
+		}
 	}
 }
