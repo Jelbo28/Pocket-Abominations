@@ -2,10 +2,17 @@
 using System.Collections;
 
 public class Buttons : MonoBehaviour {
+	public Animator anim;
+	public GameObject pokeball;
+	public float speed = 1f;
 
 	public void Play()
 	{
-		Application.LoadLevel ("Introduction");
+		//Application.LoadLevel ("Introduction");
+
+		anim.SetBool("Rotate", false);
+		anim.SetFloat ("RotateSpeed", 2.5f);
+
 	}
 
 	public void Quit()
@@ -15,6 +22,6 @@ public class Buttons : MonoBehaviour {
 
 	public void Credits()
 	{
-		Application.LoadLevel ("Credits");
+		//Application.LoadLevel ("Credits");
 	}
 }
