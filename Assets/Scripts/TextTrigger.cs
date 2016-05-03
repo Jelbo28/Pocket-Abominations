@@ -11,7 +11,6 @@ public class TextTrigger : MonoBehaviour
 		if(other.tag == "Player")
 		{
 			hello.SetActive(true);
-			//gameObject.GetComponent<MeshRenderer>().enabled = true;
 		}  
 	}
 
