@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,12 @@ public class AnimationTransitions : MonoBehaviour
 {
     [SerializeField]
     Animator exitAnimator;
+
+    [SerializeField]
+    Animator canvasAnimatior;
+
+    [SerializeField]
+    Animator cameraAnimator;
 
     public void Menu()
     {
@@ -18,5 +25,12 @@ public class AnimationTransitions : MonoBehaviour
     public void ButtonGlow()
     {
         exitAnimator.SetBool("ButtonGlow", true);
+    }
+
+    public void BallOpen()
+    {
+        canvasAnimatior.SetBool("Zoom", true);
+        cameraAnimator.SetBool("Camera", true);
+
     }
 }
