@@ -7,12 +7,6 @@ public class AnimationTransitions : MonoBehaviour
     [SerializeField]
     Animator exitAnimator;
 
-    [SerializeField]
-    Animator canvasAnimatior;
-
-    [SerializeField]
-    Animator cameraAnimator;
-
     public void Menu()
     {
         Debug.Log("Back to menu.");
@@ -24,12 +18,5 @@ public class AnimationTransitions : MonoBehaviour
     public void ButtonGlow()
     {
         exitAnimator.SetBool("ButtonGlow", true);
-    }
-
-    public void BallOpen()
-    {
-        canvasAnimatior.SetBool("Zoom", true);
-        cameraAnimator.SetBool("Camera", true);
-
     }
 }
