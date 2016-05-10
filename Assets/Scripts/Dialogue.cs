@@ -12,8 +12,12 @@ public class Dialogue : MonoBehaviour
 	public float SecondsBetweenCharacters = 0.15f;
 	public float CharacterRateMultiplier = 0.5f;
 	
-	public KeyCode DialogueInput = KeyCode.Return;
-	
+    [SerializeField]
+	KeyCode DialogueInput;
+
+    [SerializeField]
+    GameObject FadeOut;
+    	
 	private bool _isStringBeingRevealed = false;
 	private bool _isDialoguePlaying = false;
 	private bool _isEndOfDialogue = false;
@@ -34,7 +38,7 @@ public class Dialogue : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Input.GetKeyDown(KeyCode.Return))
+		if (Input.GetKeyDown(DialogueInput))
 		{
 			if (!_isDialoguePlaying)
 			{
@@ -141,6 +145,7 @@ public class Dialogue : MonoBehaviour
 		if (_isEndOfDialogue)
 		{
 			StopIcon.SetActive(true);
+            FadeOut.SetActive(true);
 			return;
 		}
 		

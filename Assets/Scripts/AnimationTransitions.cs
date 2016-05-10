@@ -14,6 +14,12 @@ public class AnimationTransitions : MonoBehaviour
     [SerializeField]
     Animator cameraAnimator;
 
+    [SerializeField]
+    Animator fadeAnimator;
+
+    [SerializeField]
+    GameObject fade;
+
     public void Menu()
     {
         Debug.Log("Back to menu.");
@@ -32,5 +38,11 @@ public class AnimationTransitions : MonoBehaviour
         canvasAnimatior.SetBool("Zoom", true);
         cameraAnimator.SetBool("Camera", true);
 
+    }
+
+    public void Fade()
+    {
+        fade.SetActive(true);
+        fadeAnimator.SetBool("Fade", true);
     }
 }
