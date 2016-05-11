@@ -4,9 +4,17 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
-	public Animator anim;
-	public GameObject pokeball;
-	public float speed = 1f;
+    [SerializeField]
+	Animator anim;
+    [SerializeField]
+	GameObject pokeball;
+    [SerializeField]
+	float speed = 1f;
+    [SerializeField]
+    AudioSource[] sounds;
+    public AudioSource goSound;
+    public AudioSource playSound;
+
 
 	public void Go()
 	{  
