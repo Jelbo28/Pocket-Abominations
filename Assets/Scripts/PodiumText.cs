@@ -14,7 +14,6 @@ public class PodiumText : MonoBehaviour
 	{
 		hello.SetActive(true);
 		triggerActive = true;
-
 	}
 
 	void Update()
