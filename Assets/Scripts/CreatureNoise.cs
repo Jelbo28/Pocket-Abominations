@@ -25,7 +25,7 @@ public class CreatureNoise : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && triggerActive == true)
         {
-            pressE.SetActive(false);
+            //pressE.SetActive(false);
             gameObject.GetComponent<AudioSource>().Play();
         }
 	}
@@ -35,6 +35,7 @@ public class CreatureNoise : MonoBehaviour
         if (other.tag == "Player")
         {
             pressE.SetActive(false);
+            triggerActive = false;
         }
     }
 }

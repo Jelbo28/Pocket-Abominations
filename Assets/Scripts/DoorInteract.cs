@@ -16,6 +16,7 @@ public class DoorInteract : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Poop");
         if (other.tag == "Player")
         {
             text.text = (" : Open");

@@ -15,9 +15,12 @@ public class PodiumText : MonoBehaviour
 	
 	void OnTriggerEnter(Collider other)
 	{
-        text.text = (" : Read");
-		pressE.SetActive(true);
-		triggerActive = true;
+        if (other.tag == "Player")
+        {
+            text.text = (" : Read");
+            pressE.SetActive(true);
+            triggerActive = true;
+        }
 	}
 
 	void Update()
@@ -35,6 +38,7 @@ public class PodiumText : MonoBehaviour
 		{
             pressE.SetActive(false);
 			Next.SetActive (false);
-		}
-	}
+            triggerActive = false;
+        }
+    }
 }
