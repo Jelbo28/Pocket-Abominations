@@ -45,4 +45,10 @@ public class AnimationTransitions : MonoBehaviour
         fade.SetActive(true);
         fadeAnimator.SetBool("Fade", true);
     }
+
+    public void Go()
+    {
+        SceneManager.LoadScene("Museum");
+    }
+
 }

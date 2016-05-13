@@ -17,6 +17,9 @@ public class Dialogue : MonoBehaviour
 
     [SerializeField]
     GameObject FadeOut;
+
+    [SerializeField]
+    AudioSource boop2;
     	
 	private bool _isStringBeingRevealed = false;
 	private bool _isDialoguePlaying = false;
@@ -42,6 +45,7 @@ public class Dialogue : MonoBehaviour
 		{
 			if (!_isDialoguePlaying)
 			{
+                boop2.Play();
 				_isDialoguePlaying = true;
 				StartCoroutine(StartDialogue());
 			}
@@ -74,7 +78,8 @@ public class Dialogue : MonoBehaviour
 		{
 			if (Input.GetKeyDown(DialogueInput))
 			{
-				break;
+                boop2.Play();
+                break;
 			}
 			
 			yield return 0;
@@ -122,7 +127,8 @@ public class Dialogue : MonoBehaviour
 		{
 			if (Input.GetKeyDown(DialogueInput))
 			{
-				break;
+                boop2.Play();
+                break;
 			}
 			
 			yield return 0;

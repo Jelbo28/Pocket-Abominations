@@ -27,4 +27,9 @@ public class HUDButton : MonoBehaviour
         back.SetActive(false);
         forward.SetActive(true);
     }
+
+    public void PlaySound()
+    {
+        gameObject.GetComponent<AudioSource>().Play(0);
+    }
 }

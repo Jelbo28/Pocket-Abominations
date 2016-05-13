@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PodiumText : MonoBehaviour 
 {
 	[SerializeField]
-	GameObject hello;
+	GameObject pressE;
+    [SerializeField]
+    Text text;
 	[SerializeField] 
 	GameObject Next;
 
@@ -12,7 +15,8 @@ public class PodiumText : MonoBehaviour
 	
 	void OnTriggerEnter(Collider other)
 	{
-		hello.SetActive(true);
+        text.text = (" : Read");
+		pressE.SetActive(true);
 		triggerActive = true;
 	}
 
@@ -20,7 +24,7 @@ public class PodiumText : MonoBehaviour
 	{
 		if(Input.GetKey(KeyCode.E) && triggerActive == true)
 		{
-			hello.SetActive (false);
+            pressE.SetActive (false);
 			Next.SetActive (true);
 		}
 	}
@@ -29,7 +33,7 @@ public class PodiumText : MonoBehaviour
 	{
 		if(other.tag == "Player")
 		{
-			hello.SetActive(false);
+            pressE.SetActive(false);
 			Next.SetActive (false);
 		}
 	}
